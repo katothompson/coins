@@ -1,31 +1,4 @@
-function getAmount (coinType) {
-
-  // COINS:
-  // [p]enny
-  // [n]ickel
-  // [d]ime
-  // [q]uarter
-
-  // switch (coinType) {
-  //   case 'p': return 1
-  //   case 'n': return 5
-  //   case 'd': return 10
-  //   case 'q': return 25
-  //   default: throw new Error('Unrecognized coin ' + coinType)
-  // }
-
-  var coinTable = {
-      p:  function(){return 1;},
-      n:  function(){return 5;},
-      d:  function(){return 10;},
-      q:  function(){return 25;},
-      default: function(){throw new Error('Unrecognized coin ' + coinType);}
-
-  }
-  coinType = coinTable.hasOwnProperty(coinType) ? coinType : 'default';
-  return coinTable[coinType]();
-
-}
+var getAmount = require('../lib/index.js');
 
 
 var expect = require('chai').expect;
@@ -45,6 +18,6 @@ describe('getAmount()', function(){
     expect(getAmount('q')).to.equal(25);
   });
   it('should return error for l', function(){
-    expect(function(){getAmount('l')}).to.throw(Error, 'Unrecognized coin');
+    expect(getAmount('l')).to.throw(Error, 'Unrecognized coin');
   })
 })

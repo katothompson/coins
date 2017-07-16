@@ -1,0 +1,65 @@
+Function declaration or function expression
+
+if declaration hoisted to top of scope
+
+
+hoistin is js unit que
+
+shift enter to get to newlilne with out enter
+
+var square = function (n) {
+return n * n
+} //ex of function expression, so var declaration hoisted to top not function
+
+typeerror vs reference error
+
+order of execution, declaration gets hoisted, then the call to the var, and then
+the function.
+
+function declarations hoisted to very top, then var declarations.
+
+coersion
+
+undefined is falsey, in boolean terms it is false.
+
+
+window obj gives way to access global variables and avoid shadowing issue
+
+a = 4;
+window.a; //returns 4, but a might have returned something else because assigned in scope
+
+in strict mode a global variable will not become a property on window
+
+const
+
+let
+
+var
+
+ways to declare variable.
+
+const can not reassign.
+it must be assigned when declared.
+
+Homework:
+
+refactor this using dispatch table and no if statements
+write unit test
+dont forget to handle error
+
+function getAmount (coinType) {
+
+  // COINS:
+  // [p]enny
+  // [n]ickel
+  // [d]ime
+  // [q]uarter
+
+  switch (coinType) {
+    case 'p': return 1
+    case 'n': return 5
+    case 'd': return 10
+    case 'q': return 25
+    default: throw new Error('Unrecognized coin ' + coinType)
+  }
+}
